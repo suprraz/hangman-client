@@ -43,7 +43,6 @@ export default class Game extends Component {
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({game: responseJson.game});
-        console.log(this.state);
         return this.state;
       })
       .catch((error) => {
@@ -95,7 +94,6 @@ export default class Game extends Component {
       .then((response) => response.json())
       .then((responseJson) => {
         this.setState({game: responseJson.game});
-        console.log(this.state);
         return this.state;
       })
       .catch((error) => {
