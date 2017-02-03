@@ -5,20 +5,21 @@ import 'whatwg-fetch'
 import './style.css';
 
 const hangmanServer = 'http://localhost:10010';
+const imageList = [
+  require('./images/Hangman-0.svg'),
+  require('./images/Hangman-1.svg'),
+  require('./images/Hangman-2.svg'),
+  require('./images/Hangman-3.svg'),
+  require('./images/Hangman-4.svg'),
+  require('./images/Hangman-5.svg'),
+  require('./images/Hangman-6.svg')
+];
 
 export default class Game extends Component {
   constructor(props) {
     super(props);
 
-    this.imageList = [
-      require('./images/Hangman-0.svg'),
-      require('./images/Hangman-1.svg'),
-      require('./images/Hangman-2.svg'),
-      require('./images/Hangman-3.svg'),
-      require('./images/Hangman-4.svg'),
-      require('./images/Hangman-5.svg'),
-      require('./images/Hangman-6.svg')
-    ];
+    this.imageList = imageList;
 
     this.state = {
       alert: ''
@@ -117,7 +118,7 @@ export default class Game extends Component {
         <button onClick={() => {this.newGame()}}>New Game</button>
       </div>
     }
-    else if(this.state.game.mistakes > 6) {
+    else if(this.state.game.mistakes >= 6) {
       const hangmanDead = require('./images/hangman-dead.jpg');
 
       contents = <div>
