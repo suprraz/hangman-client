@@ -4,7 +4,8 @@ import 'whatwg-fetch'
 
 import './style.css';
 
-const hangmanServer = 'http://localhost:10010';
+const hangmanServer = 'http://'+ window.location.hostname +':10010';
+
 const imageList = [
   require('./images/Hangman-0.svg'),
   require('./images/Hangman-1.svg'),
